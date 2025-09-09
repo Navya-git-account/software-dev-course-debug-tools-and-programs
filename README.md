@@ -51,3 +51,29 @@ From there, use the **Console**, **Sources tab**, and **debugger statements** to
 ---
 
 Let me know if you'd like to add starter files, error clues, or a checklist of bugs to find!
+
+/*
+==========================
+Debugging Tools Summary
+==========================
+
+1. Console:
+- The console revealed warnings for invalid discount rates and helped spot missing DOM elements.
+- Console logs like "Starting shopping cart calculation..." confirmed code execution flow.
+
+2. Sources + Breakpoints:
+- Set breakpoints inside calculateTotal, applyDiscount, and generateReceipt.
+- Stepped through the loop in calculateTotal and saw that the loop condition was off by one (using <= instead of <).
+- Verified discountRate validation in applyDiscount to catch invalid values early.
+
+3. Variable Inspection:
+- Watched variable 'total' and 'discountRate' to verify values at each stage.
+- Noticed total could be NaN if input was bad, added check in generateReceipt to handle it.
+
+4. DOM Checks:
+- Console warned about missing DOM elements; added conditionals to prevent runtime errors.
+
+Using these tools, I was able to trace errors precisely and fix them with confidence, improving stability and handling edge cases.
+
+*/
+
