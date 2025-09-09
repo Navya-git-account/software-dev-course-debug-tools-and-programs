@@ -42,3 +42,54 @@ These fixes ensure the application calculates totals correctly, applies discount
 handles edge cases (like empty cart or invalid discount), and safely updates the UI.
 
 */
+
+/*
+===============================================
+🛠️ How Debugging Tools Helped Resolve Issues
+===============================================
+
+1. 🧪 Console Tab:
+------------------
+- The Console showed multiple syntax and runtime errors, such as:
+  - Uncaught ReferenceError for undefined variables.
+  - NaN results due to improper mathematical operations.
+- These messages provided exact line numbers, making it easier to jump directly to the faulty code.
+
+2. 🎯 Sources Tab + Breakpoints:
+-------------------------------
+- I set breakpoints inside the following functions:
+  - calculateTotal(cart)
+  - applyDiscount(total, discountRate)
+  - generateReceipt(cart, discountRate)
+- This allowed me to step through the code line-by-line and observe how variables changed over time.
+- I discovered that the discount calculation was applying incorrectly because of a logic error in how the total was reduced.
+
+3. ⛔ Call Stack:
+----------------
+- When errors occurred, I used the Call Stack panel to trace exactly which function caused the issue and how execution got there.
+- This helped pinpoint indirect bugs, like incorrect values being passed between functions.
+
+4. 🕵️‍♂️ Watch Panel and Scope Inspection:
+------------------------------------------
+- I added variables to the "Watch" list to monitor their values during execution.
+- I used the "Scope" section to inspect local and global variables at each step.
+- This made it easier to catch issues like:
+  - Empty arrays not being handled.
+  - Discount rate values being out of expected range.
+
+5. 🧷 debugger; Statements:
+---------------------------
+- I temporarily inserted `debugger;` in loops and conditionals to pause the code at strategic places.
+- This let me check the internal state and fix issues like:
+  - Loop not iterating due to incorrect length checks.
+  - Incorrect item prices being added to total.
+
+6. ✅ Final Testing:
+--------------------
+- After fixing the bugs, I used DevTools again to:
+  - Verify no new errors appeared in the console.
+  - Confirm expected output for edge cases like an empty cart or a 100% discount.
+
+Overall, Chrome Developer Tools gave me full visibility into the program's execution flow and helped isolate each bug quickly and precisely.
+
+*/
